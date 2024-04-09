@@ -5,3 +5,7 @@ dcc.Checklist(
      'Montréal',
      'San Francisco']
 )
+
+
+* [ ] 1
+* [ ] 2
