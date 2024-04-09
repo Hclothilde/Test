@@ -16,3 +16,6 @@ dcc.Checklist(
 * [ ] 2
 
 [check_list](https://github.com/Hclothilde/Test/issues/1#issue-2233328206)
+
+
+[https://github.com/FND/markdown-checklist/blob/master/README](https://github.com/FND/markdown-checklist/blob/master/README)
