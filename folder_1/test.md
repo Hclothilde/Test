@@ -7,5 +7,5 @@ dcc.Checklist(
 )
 
 
-* [ ] 1
+* [x] 1
 * [ ] 2
