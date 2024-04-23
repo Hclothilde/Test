@@ -1,4 +1,4 @@
-## Clonage partiel "sparse-checkcout"
+## Clonage partiel "sparse-checkout"
 
 > [!warning]
 > commande expérimentale ajouter à git 2.25.0 , regarder si changement à l'avenir
