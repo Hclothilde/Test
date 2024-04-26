@@ -13,8 +13,7 @@ rm lancement_kosmos.sh
 rm logfile_kosmos
 
 #Effacer le contenu du crontab
-#[TO DO] crontab -e oure un fichier temporaire pour modifier crontab -r supprime le fichier
-(sudo crontab -l; echo "@reboot sudo bash /home/$nom_raspberry/lancement_kosmos.sh > /home/$nom_raspberry/logfile_kosmos/log.txt 2>&1";) | uniq - | sudo crontab
-sudo crontab -l
+#[TO DO] crontab -e ouvre un fichier temporaire pour modifier crontab -r supprime le fichier
+sudo crontab
 
 exit 0
