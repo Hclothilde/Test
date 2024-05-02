@@ -8,7 +8,8 @@ Dans le terminal
   ```
   mkdir <repo>
   cd <repo>
-  git remote add -f origin <url git> 
+  git init
+  git remote add -f origin <url git>
   git sparse-checkout init
   git sparse-checkout set "chemin dossier"
   git sparse-checkout list
