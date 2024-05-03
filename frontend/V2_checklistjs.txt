@@ -1,0 +1,89 @@
+// This variable holds the URL of the server where the backend is hosted
+let serverUrl = "http://10.42.0.1:5000";
+// Alternative server URL (commented out)
+// let serverUrl = "http://10.29.225.198:5000";
+
+// Variable to store configuration data fetched from the server
+let listData; 
+var checkboxes;
+var checkboxes2;
+var result = [];
+
+
+
+// Function to fetch the list
+function fetchList() {
+  try {
+    const myList = document.querySelector("section");
+
+      fetch("list.json")
+	.then((response) => {
+	  if (!response.ok) {
+	    throw new Error(`HTTP error, status = ${response.status}`);
+	  }
+	  return response.json();
+	})
+	.then ((data) => {
+	  for (let element of data.materiel) {
+	     //console.log("check mat ", data.materiel);
+	    let listItem = document.createElement("ul");
+	    
+	    let input = document.createElement("input");
+	    input.setAttribute("type", "checkbox");
+	    //input.setAttribute("checked", true);
+	    input.setAttribute("id", element);
+	    input.setAttribute("name", "materiel");
+	    input.classList.add("list-element");
+	    input.value = myList[element];
+	    
+	    let label = document.createElement("label");
+	    label.setAttribute("for", "materiel" + element);
+	    label.classList.add("list-element");
+	    label.textContent = element;
+	    
+	    listItem.append(
+			    input,
+			    label
+			    )
+	    
+	    myList.appendChild(listItem);
+	    listData = myList;
+	    listItem='';
+	
+	    }
+	    change();
+	  
+	  })
+	}
+  catch(error){
+    const p = document.createElement("p");
+    p.appendChild(document.createTextNode(`Error: ${error.message}`));
+    document.body.insertBefore(p, myList);
+  }
+
+}
+
+function change(){
+  var box = document.querySelectorAll("input[type='checkbox']");
+  var selectbox = [];
+  box.forEach(box => {
+    box.addEventListener( 'change', () => {
+      if(box.checked) {
+	console.log("change ok");
+	selectbox.push(box.id);
+      } else {
+	var index = selectbox.indexOf(box.id)
+	if (index !== -1){
+	  selectbox.splice(index, 1);
+	}
+      }
+      console.log(selectbox);
+    });
+  });
+}
+
+// Fetch the list when the page loads
+fetchList();
+
+
+
