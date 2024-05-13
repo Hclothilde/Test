@@ -54,10 +54,6 @@ a:hover {
   padding: 20px;
 }
 
-section, ul {
-  list-style-type: none;
-}
-
 table {
   width: 100%;
   border-collapse: collapse;
@@ -126,14 +122,6 @@ input {
   padding: 8px;
   box-sizing: border-box;
   margin-bottom: 10px;
-}
-
-.list{
-  margin-bottom: 15px;
-}
-
-.list-element{
-  width: 5%;
 }
 
 button {
